@@ -19,7 +19,9 @@ from typing import Optional
 
 class Address(BaseModel):
     city:str = Field(..., min_length=3)
-    pincode : str = Field(..., pattern=r"^\d[9]$")
+    pincode : str = Field(..., pattern=r"^\d[6]$")
+
+    model_config = {"validate_assignment":True}
 
 class user(BaseModel):
     user_id : int
@@ -29,4 +31,11 @@ class user(BaseModel):
     address: Address
     is_premium: Optional[bool] = False
 
-data = user[user_id=1, nam
+    model_config = {"validate_assignment":True}
+
+data = user(user_id=1, 
+            name="Hitesh",
+            email="hitesh@gmail.com", 
+            age=20, 
+            address=Address(city="Delhi", pincode="123456"), 
+            is_premium=True)
