@@ -19,7 +19,7 @@ from typing import Optional
 
 class Address(BaseModel):
     city:str = Field(..., min_length=3)
-    pincode : str = Field(..., pattern=r"^\d[6]$")
+    pincode : str = Field(..., pattern=r"^\d{6}$")
 
     model_config = {"validate_assignment":True}
 
@@ -39,3 +39,5 @@ data = user(user_id=1,
             age=20, 
             address=Address(city="Delhi", pincode="123456"), 
             is_premium=True)
+
+print(data)
