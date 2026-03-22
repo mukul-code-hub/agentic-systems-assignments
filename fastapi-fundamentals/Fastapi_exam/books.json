@@ -1,0 +1,12 @@
+{
+    "BOOK1":{
+        "title":"World of wonders",
+        "author":"charlie",
+        "year":"2010"
+    },
+        "BOOK2":{
+        "title":"vector database",
+        "author":"Mohan",
+        "year":"2018"
+    }
+}
